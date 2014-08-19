@@ -10,6 +10,7 @@ class SightingsController < ApplicationController
   end
 
   def new
+    @regions = Region.all
     @species = Specie.all
     render('sightings/new.html.erb')
   end
