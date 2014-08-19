@@ -15,7 +15,7 @@ class SpeciesController < ApplicationController
 
   def create
     @specie = Specie.create(params[:specie])
-    render('species/success.html.erb')
+    redirect_to("/species")
   end
 
   def destroy

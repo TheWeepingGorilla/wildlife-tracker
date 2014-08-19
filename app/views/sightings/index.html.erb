@@ -2,7 +2,7 @@
 
 <ul>
   <% @sightings.each do |sighting| %>
-    <li><a href="/sightings/<%= sighting.id %>"> On <%= sighting.date %> I saw a <%= Specie.find_by(sighting.specie_id).name %> in <%= Region.find_by(sighting.region_id).name %> @ <%= sighting.latitude %> : <%= sighting.longitude %></a></li>
+    <li><a href="/sightings/<%= sighting.id %>"> <mark>On </mark><%= sighting.date %> I saw a <%= Specie.find_by(sighting.specie_id).name %> in <%= Region.find_by(sighting.region_id).name %> @ <%= sighting.latitude %> : <%= sighting.longitude %></a></li>
   <% end %>
 </ul>
 

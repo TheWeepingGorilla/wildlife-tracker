@@ -17,7 +17,7 @@ class SightingsController < ApplicationController
 
   def create
     @sighting = Sighting.create(params[:sighting])
-    render('sightings/success.html.erb')
+    redirect_to("/sightings")
   end
 
   def destroy
@@ -34,7 +34,7 @@ class SightingsController < ApplicationController
   def update
     @sighting = Sighting.find(params[:id])
     if @sighting.update(params[:sighting])
-      render('sightings/success.html.erb')
+      redirect_to('/sightings')
     else
       render('sightings/edit.html.erb')
     end

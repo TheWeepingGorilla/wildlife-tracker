@@ -15,7 +15,7 @@ class RegionsController < ApplicationController
 
   def create
     @region = Region.create(params[:region])
-    render('regions/success.html.erb')
+      redirect_to('/regions')
   end
 
   def destroy
