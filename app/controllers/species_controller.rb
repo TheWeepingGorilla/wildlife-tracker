@@ -1,6 +1,11 @@
 class SpeciesController < ApplicationController
-  def show
+  def index
     @species = Specie.all
+    render('species/index.html.erb')
+  end
+
+  def show
+    @specie = Specie.find(params[:id])
     render('species/show.html.erb')
   end
 
@@ -9,7 +14,14 @@ class SpeciesController < ApplicationController
   end
 
   def create
-    @new_specie = Specie.create(params[:specie])
+    @specie = Specie.create(params[:specie])
     render('species/success.html.erb')
   end
+
+  def destroy
+    @specie = Specie.find(params[:id])
+    @specie.destroy
+    render('species/destroy.html.erb')
+  end
+
 end

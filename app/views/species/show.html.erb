@@ -1,7 +1,8 @@
-<h1>Species</h1>
+<h1><%= @specie.name %></h1>
 
-<ul>
-  <% @species.each do |specie| %>
-    <li><%= specie.name %></li>
-  <% end %>
-</ul>
+<p><a href="/species/<%= @specie.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+
+<p><a href="/species">Return to species listing</a></p>
